@@ -11,6 +11,12 @@
         <p *ngIf="authForm.errors?.['invalidPassword']">
             Password and Password Confirmation must match
         </p>
+        <p *ngIf = "authForm.errors?.['noConnection']">
+          No internet connection
+        </p>
+        <p *ngIf = "authForm.errors?.['unknownError']">
+          Sorry uknown error
+        </p>
     </div>
     <div>
       <button class="ui submit button primary">

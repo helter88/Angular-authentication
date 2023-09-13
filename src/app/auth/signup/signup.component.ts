@@ -40,8 +40,15 @@ export class SignupComponent {
       return;
     }
     this.authService.signUp(this.authForm.value as SignUpCredencials)
-      .subscribe(res => {
-        console.log(res.username);
+      .subscribe({
+        next: () => {},
+        error: (err) => {
+          if(!err.status){
+            this.authForm.setErrors({noConnection: true})
+          } else {
+            this.authForm.setErrors({unknownError: true})
+          }
+        }
       })
   }
 }
