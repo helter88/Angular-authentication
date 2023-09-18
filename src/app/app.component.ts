@@ -7,7 +7,7 @@ import { AuthService } from './auth/validators/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isSignIn = false;
+  isSignIn: boolean | null = false;
 
   constructor(
     private authService: AuthService

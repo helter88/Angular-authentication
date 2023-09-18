@@ -33,7 +33,7 @@ export class AuthService {
 
   rootURL= 'https://api.angular-email.com';
 
-  sideIn$ = new BehaviorSubject(false);
+  sideIn$ = new BehaviorSubject<null | boolean>(null);
 
   constructor(private http: HttpClient) {}
 
